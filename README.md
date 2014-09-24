@@ -20,9 +20,9 @@ To build fat jar
 The run using java -jar <jarfile>
 
 Jetty server ports
-trader_collect = 8080
-trader_service = 9080
-trader_ui = 7080
+- trader_collect = 8080
+- trader_service = 9080
+- trader_ui = 7080
 
 Accesss trader UI on URL http://localhost:7080/traderui/#/summary
 
