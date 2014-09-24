@@ -1,5 +1,17 @@
-.gradle
-build/
+trader_collect/.gradle/*
+trader_collect/.idea/*
+trader_collect/build/
+trader_collect/trader_collect.iml
+
+trader_service/.gradle/*
+trader_service/.idea/*
+trader_service/build/
+trader_service/trader_service.iml
+
+trader_ui/.gradle/*
+trader_ui/.idea/*
+trader_ui/build/
+trader_ui/trader_ui.iml
 
 # Ignore Gradle GUI config
 gradle-app.setting

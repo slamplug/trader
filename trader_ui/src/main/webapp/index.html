@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html ng-app="traderUiApp">
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/application.css">
+
+    <script src="vendor/jquery.min.js"></script>
+    <script src="vendor/bootstrap.min.js"></script>
+
+    <script src="vendor/angular.min.js"></script>
+    <script src="vendor/angular-route.min.js"></script>
+    <script src="vendor/angular-resource.min.js"></script>
+
+    <script src="js/application.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
+    <style>
+        body { padding-top: 20px; }
+        table { width: 100%; }
+        td, th {text-align: left; white-space: nowrap;}
+        td.numeric, th.numeric { text-align: right; }
+        h2, h3 {margin-top: 1em;}
+        section {padding-top: 40px;}
+    </style>
+
+</head>
+
+<body>
+
+    <div class="view-container">
+        <div ng-view class="view-frame"></div>
+    </div>
+
+    <br/>
+
+    <div id="footer">
+        <footer class="footer">
+            This App is build with AngularJS and Spring Boot...
+        </footer>
+    </div>
+
+</body>
+</html>

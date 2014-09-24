@@ -1,0 +1,73 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-10">
+	 
+      <!-- stocks table --> 	 
+	  <section id="stocks-table">
+          <table class="table-bordered table-striped table-condensed cf">
+            <thead class="cf">
+              <tr>
+                <th>Symbol</th>
+				<th>Name</td>
+				<th>Price</td>
+				<th>Currency</td>
+				<th>Stock Exchange</td>
+			  </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="stockPrice in stockPrices | orderBy:orderProp">
+                <td>{{stockPrice.symbol}}</td>
+				<td>{{stockPrice.Name}}</td>
+				<td>{{stockPrice.Ask}}</td>
+				<td>{{stockPrice.Currency}}</td>
+				<td>{{stockPrice.StockExchange}}</td>
+              </tr>
+            </tbody>
+          </table>
+       </section>
+
+        <br/>
+       <input type="button" value="Refresh Stock Prices" class="btn btn-primary" ng-click="refreshStockPrices()"/>
+
+        <!-- alerts table -->
+        <section id="alerts-table">
+            <table class="table-bordered table-striped table-condensed cf">
+                <thead class="cf">
+                <tr>
+                    <th>Symbol</th>
+                    <th>Old Price</td>
+                    <th>New Price</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="stockAlert in stockAlerts | orderBy:orderProp">
+                    <td>{{stockAlert.symbol}}</td>
+                    <td>{{stockAlert.oldPrice}}</td>
+                    <td>{{stockAlert.newPrice}}</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <br/>
+        <input type="button" value="Refresh Alerts" class="btn btn-primary" ng-click="refreshAlerts()"/>
+
+        <br/>
+        <br/>
+        <br/>
+
+        <form name="addSymbolForm" method="post" novalidate>
+            <label for="companySymbol">Company:</label>
+            <input id="companySymbol" type="text" name="companySymbol" ng-model="companySymbol" required /><br />
+            <label for="alertBelow">Alert Below Value:</label>
+            <input id="alertBelow" type="text" name="alertBelow" ng-model="alertBelow" required /><br />
+            <label for="alertAbove">Alert Above Value:</label>
+            <input id="alertAbove" type="text" name="alertAbove" ng-model="alertAbove" required /><br />
+            <br />
+            <button type="button" ng-click="addWatchOnSymbol()" class="btn btn-primary"
+                    ng-disabled="addSymbolForm.$invalid">Add Alert for Company</button>
+        </form>
+    </div>
+  </div>
+</div>
